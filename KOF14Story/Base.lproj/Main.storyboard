@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +16,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KOF14Story" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -44,6 +47,64 @@
             </objects>
             <point key="canvasLocation" x="-1526" y="-675"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eSB-Oa-d0a">
+            <objects>
+                <navigationController id="qwT-lc-Kfr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="sTQ-hc-aex"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zG4-BO-sjS">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Ygi-Fc-uRZ" kind="relationship" relationship="rootViewController" id="jCY-zE-0ki"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KgI-mW-B5K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="667" y="-1379"/>
+        </scene>
+        <!--Web Youtube View Controller-->
+        <scene sceneID="3Yf-m4-TY8">
+            <objects>
+                <viewController id="Ygi-Fc-uRZ" customClass="WebYoutubeViewController" customModule="KOF14Story" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lff-vQ-tKk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xt-gz-BXa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="i3I-2c-SZq">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Xt-gz-BXa" firstAttribute="top" secondItem="lff-vQ-tKk" secondAttribute="top" id="CPn-Zm-KJK"/>
+                            <constraint firstItem="8Xt-gz-BXa" firstAttribute="leading" secondItem="NFU-zs-Y6j" secondAttribute="leading" id="Deb-sD-KO0"/>
+                            <constraint firstItem="8Xt-gz-BXa" firstAttribute="bottom" secondItem="NFU-zs-Y6j" secondAttribute="bottom" id="fKn-f5-KX3"/>
+                            <constraint firstItem="i3I-2c-SZq" firstAttribute="centerX" secondItem="lff-vQ-tKk" secondAttribute="centerX" id="k0z-8Q-3et"/>
+                            <constraint firstItem="i3I-2c-SZq" firstAttribute="centerY" secondItem="lff-vQ-tKk" secondAttribute="centerY" id="p1a-du-nhX"/>
+                            <constraint firstItem="8Xt-gz-BXa" firstAttribute="trailing" secondItem="NFU-zs-Y6j" secondAttribute="trailing" id="u01-fB-tda"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NFU-zs-Y6j"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KEh-Wp-KAK"/>
+                    <connections>
+                        <outlet property="myActivity" destination="i3I-2c-SZq" id="pyK-3c-MfC"/>
+                        <outlet property="myWKWebView" destination="8Xt-gz-BXa" id="aFa-Qm-mgD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al2-xL-CEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1414.4927536231885" y="-1379.3478260869567"/>
+        </scene>
         <!--Teams-->
         <scene sceneID="ocz-9o-EUu">
             <objects>
@@ -55,186 +116,270 @@
                         <sections>
                             <tableViewSection id="yHY-8Q-5Iu">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="yDx-wa-IaT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="yDx-wa-IaT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDx-wa-IaT" id="z3o-SW-UGM">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="日本チーム" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-nT-D3E">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3c-BF-SRC">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">日本チーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wka-YB-QzR">
+                                                    <rect key="frame" x="10" y="5" width="381" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日本チーム" translatesAutoresizingMaskIntoConstraints="NO" id="hHN-nT-D3E">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="xKI-Zw-UnL"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3c-BF-SRC">
+                                                            <rect key="frame" x="230" y="0.0" width="151" height="109.66666666666667"/>
+                                                            <string key="text">日本チーム
 日本隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstItem="Wka-YB-QzR" firstAttribute="leading" secondItem="z3o-SW-UGM" secondAttribute="leading" constant="10" id="7UC-dv-n4R"/>
+                                                <constraint firstItem="Wka-YB-QzR" firstAttribute="top" secondItem="z3o-SW-UGM" secondAttribute="top" constant="5" id="9pY-AG-Zhh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Wka-YB-QzR" secondAttribute="bottom" constant="5" id="csW-S5-V9D"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wka-YB-QzR" secondAttribute="trailing" constant="-10" id="vEv-SH-lUX"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
                                             <segue destination="KlP-iI-2d3" kind="show" id="8C6-xA-5t7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="tJN-oX-Wsz">
-                                        <rect key="frame" x="0.0" y="103" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="tJN-oX-Wsz">
+                                        <rect key="frame" x="0.0" y="120" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tJN-oX-Wsz" id="QH7-PS-6JJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="八神チーム" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-UY-EQp">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzF-Sr-77o">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">八神チーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-0Y-N0v">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八神チーム" translatesAutoresizingMaskIntoConstraints="NO" id="ZUq-UY-EQp">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="JC8-zy-7v9"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzF-Sr-77o">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">八神チーム
 八神隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="4gD-0Y-N0v" secondAttribute="bottom" constant="5" id="ViR-ab-hrx"/>
+                                                <constraint firstAttribute="trailing" secondItem="4gD-0Y-N0v" secondAttribute="trailing" constant="10" id="aBr-tz-bwd"/>
+                                                <constraint firstItem="4gD-0Y-N0v" firstAttribute="top" secondItem="QH7-PS-6JJ" secondAttribute="top" constant="5" id="qIf-ob-tWv"/>
+                                                <constraint firstItem="4gD-0Y-N0v" firstAttribute="leading" secondItem="QH7-PS-6JJ" secondAttribute="leading" constant="10" id="yVt-T4-KMF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="lFE-bl-yfM" kind="show" id="Xo5-iz-bbt"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="xoD-YC-gzg">
-                                        <rect key="frame" x="0.0" y="206" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="xoD-YC-gzg">
+                                        <rect key="frame" x="0.0" y="240" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xoD-YC-gzg" id="v2q-2Q-EmZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="オフィシャル招待チーム" translatesAutoresizingMaskIntoConstraints="NO" id="DTe-Jy-w4d">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cii-Sy-bvB">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">オフィシャル
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-GZ-MCN">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="オフィシャル招待チーム" translatesAutoresizingMaskIntoConstraints="NO" id="DTe-Jy-w4d">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="c56-Gm-G1U"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cii-Sy-bvB">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">オフィシャル
 招待チーム
 官方招待</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yR9-GZ-MCN" firstAttribute="top" secondItem="v2q-2Q-EmZ" secondAttribute="top" constant="5" id="Mnb-zm-XQL"/>
+                                                <constraint firstItem="yR9-GZ-MCN" firstAttribute="leading" secondItem="v2q-2Q-EmZ" secondAttribute="leading" constant="10" id="NTh-3m-GEo"/>
+                                                <constraint firstAttribute="trailing" secondItem="yR9-GZ-MCN" secondAttribute="trailing" constant="10" id="nYe-Mt-De9"/>
+                                                <constraint firstAttribute="bottom" secondItem="yR9-GZ-MCN" secondAttribute="bottom" constant="5" id="xKC-1q-bgF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="04w-bR-5vy" kind="show" id="e7p-7B-YF0"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="bMf-WN-8s4">
-                                        <rect key="frame" x="0.0" y="309" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="bMf-WN-8s4">
+                                        <rect key="frame" x="0.0" y="360" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bMf-WN-8s4" id="Crw-Kj-5oe">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="南米チーム" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-gg-eXh">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-Ck-UFB">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">南米チーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-Z6-tgq">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="南米チーム" translatesAutoresizingMaskIntoConstraints="NO" id="KZ3-gg-eXh">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="81S-xK-s9F"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdP-Ck-UFB">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">南米チーム
 南美隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3d7-Z6-tgq" firstAttribute="leading" secondItem="Crw-Kj-5oe" secondAttribute="leading" constant="10" id="DBJ-vk-H0R"/>
+                                                <constraint firstAttribute="bottom" secondItem="3d7-Z6-tgq" secondAttribute="bottom" constant="5" id="cNU-Yh-KYH"/>
+                                                <constraint firstItem="3d7-Z6-tgq" firstAttribute="top" secondItem="Crw-Kj-5oe" secondAttribute="top" constant="5" id="hK4-Uu-Jcn"/>
+                                                <constraint firstAttribute="trailing" secondItem="3d7-Z6-tgq" secondAttribute="trailing" constant="10" id="ucK-dL-2NI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="dmf-F8-eFH" kind="show" id="VZk-Mh-xhC"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="8vQ-u3-InN">
-                                        <rect key="frame" x="0.0" y="412" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="8vQ-u3-InN">
+                                        <rect key="frame" x="0.0" y="480" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8vQ-u3-InN" id="pUS-sN-8Ux">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="キムチーム" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-Bk-JVR">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-RR-oyE">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">キムチーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7TZ-Qv-hqa">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="キムチーム" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-Bk-JVR">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="1VM-X4-t8S"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZb-RR-oyE">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">キムチーム
 金隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7TZ-Qv-hqa" secondAttribute="trailing" constant="10" id="TwW-pu-zs6"/>
+                                                <constraint firstItem="7TZ-Qv-hqa" firstAttribute="leading" secondItem="pUS-sN-8Ux" secondAttribute="leading" constant="10" id="bYS-V8-u3s"/>
+                                                <constraint firstItem="7TZ-Qv-hqa" firstAttribute="top" secondItem="pUS-sN-8Ux" secondAttribute="top" constant="5" id="q4q-yl-ZgI"/>
+                                                <constraint firstAttribute="bottom" secondItem="7TZ-Qv-hqa" secondAttribute="bottom" constant="5" id="wkr-eK-qK3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="eYw-uf-Vnu" kind="show" id="8fk-zd-L4S"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="gz4-UC-WKQ">
-                                        <rect key="frame" x="0.0" y="515" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="gz4-UC-WKQ">
+                                        <rect key="frame" x="0.0" y="600" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gz4-UC-WKQ" id="syH-ib-5qV">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="メキシコチーム" translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-DJ-lkd">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhA-0O-QDp">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">メキシコチーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0F-pr-IAm">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="メキシコチーム" translatesAutoresizingMaskIntoConstraints="NO" id="9Xt-DJ-lkd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="KnU-ju-4pB"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhA-0O-QDp">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">メキシコチーム
 墨西哥隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="q0F-pr-IAm" secondAttribute="bottom" constant="5" id="6Ta-m2-phC"/>
+                                                <constraint firstItem="q0F-pr-IAm" firstAttribute="top" secondItem="syH-ib-5qV" secondAttribute="top" constant="5" id="CWr-zD-aSp"/>
+                                                <constraint firstAttribute="trailing" secondItem="q0F-pr-IAm" secondAttribute="trailing" constant="10" id="RI0-Ip-c7A"/>
+                                                <constraint firstItem="q0F-pr-IAm" firstAttribute="leading" secondItem="syH-ib-5qV" secondAttribute="leading" constant="10" id="vFD-23-9yx"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ac5-iC-nLr" kind="show" id="lWE-5i-xCN"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="103" id="qp9-aT-jOY">
-                                        <rect key="frame" x="0.0" y="618" width="414" height="103"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="120" id="qp9-aT-jOY">
+                                        <rect key="frame" x="0.0" y="720" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qp9-aT-jOY" id="7e4-z2-ba9">
-                                            <rect key="frame" x="0.0" y="0.0" width="381" height="102.66666666666667"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="119.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="異世界チーム" translatesAutoresizingMaskIntoConstraints="NO" id="0QM-jS-TZa">
-                                                    <rect key="frame" x="0.0" y="-6" width="244" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igy-B0-Gco">
-                                                    <rect key="frame" x="231" y="-6" width="144" height="109"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">異世界チーム
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-c7-YpX">
+                                                    <rect key="frame" x="10" y="5" width="361" height="109.66666666666667"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="異世界チーム" translatesAutoresizingMaskIntoConstraints="NO" id="0QM-jS-TZa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="230" height="109.66666666666667"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="230" id="9ie-Ko-anK"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igy-B0-Gco">
+                                                            <rect key="frame" x="230" y="0.0" width="131" height="109.66666666666667"/>
+                                                            <string key="text">異世界チーム
 異世界隊</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="zlk-c7-YpX" secondAttribute="bottom" constant="5" id="ITm-9N-WtI"/>
+                                                <constraint firstItem="zlk-c7-YpX" firstAttribute="top" secondItem="7e4-z2-ba9" secondAttribute="top" constant="5" id="ehs-7E-jpP"/>
+                                                <constraint firstAttribute="trailing" secondItem="zlk-c7-YpX" secondAttribute="trailing" constant="10" id="rqS-qx-Dbo"/>
+                                                <constraint firstItem="zlk-c7-YpX" firstAttribute="leading" secondItem="7e4-z2-ba9" secondAttribute="leading" constant="10" id="yB4-G2-cm6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="QPn-Ez-Oom" kind="show" id="5fB-Gw-t2D"/>
@@ -258,36 +403,52 @@
         <scene sceneID="z2f-ME-S2h">
             <objects>
                 <viewController title="異世界隊" id="QPn-Ez-Oom" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="XDh-rW-uoO">
+                    <view key="view" contentMode="scaleToFill" id="XDh-rW-uoO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-qh-WNJ">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="異世界01"/>
-                                <connections>
-                                    <segue destination="nei-98-FLU" kind="show" id="zW0-jp-3q8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8o-hM-CMe">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="異世界02"/>
-                                <connections>
-                                    <segue destination="ASO-3X-PWW" kind="show" id="0Yj-jJ-hhW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-0C-8I3">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="異世界03"/>
-                                <connections>
-                                    <segue destination="cdM-zJ-jyR" kind="show" id="xJK-yM-tZM"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="868-oD-dtf">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjz-qh-WNJ" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="異世界01"/>
+                                        <connections>
+                                            <segue destination="nei-98-FLU" kind="show" id="zW0-jp-3q8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8o-hM-CMe" userLabel="Button2">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="異世界02"/>
+                                        <connections>
+                                            <segue destination="ASO-3X-PWW" kind="show" id="0Yj-jJ-hhW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqz-0C-8I3" userLabel="Button3">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="異世界03"/>
+                                        <connections>
+                                            <segue destination="cdM-zJ-jyR" kind="show" id="xJK-yM-tZM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p8o-hM-CMe" firstAttribute="width" secondItem="yjz-qh-WNJ" secondAttribute="width" id="4Jm-tN-LnR"/>
+                                    <constraint firstItem="oqz-0C-8I3" firstAttribute="height" secondItem="p8o-hM-CMe" secondAttribute="height" id="Am0-U4-gu9"/>
+                                    <constraint firstItem="oqz-0C-8I3" firstAttribute="width" secondItem="p8o-hM-CMe" secondAttribute="width" id="MSo-DB-o8z"/>
+                                    <constraint firstItem="p8o-hM-CMe" firstAttribute="height" secondItem="yjz-qh-WNJ" secondAttribute="height" id="Nqe-Ni-DF3"/>
+                                    <constraint firstItem="yjz-qh-WNJ" firstAttribute="height" secondItem="868-oD-dtf" secondAttribute="height" id="PdL-Kz-5JQ"/>
+                                    <constraint firstItem="yjz-qh-WNJ" firstAttribute="width" secondItem="868-oD-dtf" secondAttribute="width" multiplier="1:3" id="VfB-2w-QUf"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="868-oD-dtf" firstAttribute="top" secondItem="XDh-rW-uoO" secondAttribute="top" id="AzO-tO-8lg"/>
+                            <constraint firstAttribute="trailing" secondItem="868-oD-dtf" secondAttribute="trailing" id="omR-kA-Kvh"/>
+                            <constraint firstItem="868-oD-dtf" firstAttribute="leading" secondItem="xLx-8u-wrt" secondAttribute="leading" id="teA-LL-8Z2"/>
+                            <constraint firstItem="xLx-8u-wrt" firstAttribute="bottom" secondItem="868-oD-dtf" secondAttribute="bottom" id="xGP-jC-gmh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xLx-8u-wrt"/>
                     </view>
                 </viewController>
@@ -299,36 +460,52 @@
         <scene sceneID="jsG-ls-QOS">
             <objects>
                 <viewController title="墨西哥隊" id="ac5-iC-nLr" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="VU3-wk-DWy">
+                    <view key="view" contentMode="scaleToFill" id="VU3-wk-DWy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-LY-9mL">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="墨西哥01"/>
-                                <connections>
-                                    <segue destination="IzG-Nu-Ij7" kind="show" id="w6e-AJ-uAy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3e-Ed-pcx">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="墨西哥02"/>
-                                <connections>
-                                    <segue destination="AAt-1L-GcO" kind="show" id="bfm-xu-Pmn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxZ-Zx-cin">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="墨西哥03"/>
-                                <connections>
-                                    <segue destination="rxb-Ne-9D8" kind="show" id="Ufm-M6-jGV"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tcX-Lr-bMa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Da-LY-9mL" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="墨西哥01"/>
+                                        <connections>
+                                            <segue destination="IzG-Nu-Ij7" kind="show" id="w6e-AJ-uAy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3e-Ed-pcx" userLabel="Button2">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="墨西哥02"/>
+                                        <connections>
+                                            <segue destination="AAt-1L-GcO" kind="show" id="bfm-xu-Pmn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxZ-Zx-cin" userLabel="Button3">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="墨西哥03"/>
+                                        <connections>
+                                            <segue destination="rxb-Ne-9D8" kind="show" id="Ufm-M6-jGV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="9Da-LY-9mL" firstAttribute="width" secondItem="tcX-Lr-bMa" secondAttribute="width" multiplier="1:3" id="72j-1V-BtJ"/>
+                                    <constraint firstItem="9Da-LY-9mL" firstAttribute="height" secondItem="tcX-Lr-bMa" secondAttribute="height" id="7BE-9Q-u58"/>
+                                    <constraint firstItem="Z3e-Ed-pcx" firstAttribute="height" secondItem="9Da-LY-9mL" secondAttribute="height" id="MLY-FE-Fjp"/>
+                                    <constraint firstItem="Z3e-Ed-pcx" firstAttribute="width" secondItem="9Da-LY-9mL" secondAttribute="width" id="Mtl-GQ-jHD"/>
+                                    <constraint firstItem="sxZ-Zx-cin" firstAttribute="width" secondItem="Z3e-Ed-pcx" secondAttribute="width" id="Vdn-V7-AIk"/>
+                                    <constraint firstItem="sxZ-Zx-cin" firstAttribute="height" secondItem="Z3e-Ed-pcx" secondAttribute="height" id="uL5-br-683"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2AS-8Y-NZs" firstAttribute="bottom" secondItem="tcX-Lr-bMa" secondAttribute="bottom" id="8Fo-UH-AbE"/>
+                            <constraint firstItem="tcX-Lr-bMa" firstAttribute="leading" secondItem="2AS-8Y-NZs" secondAttribute="leading" id="8fv-XK-q0g"/>
+                            <constraint firstAttribute="trailing" secondItem="tcX-Lr-bMa" secondAttribute="trailing" id="GJR-VH-QCW"/>
+                            <constraint firstItem="tcX-Lr-bMa" firstAttribute="top" secondItem="VU3-wk-DWy" secondAttribute="top" id="nsw-d7-SPJ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2AS-8Y-NZs"/>
                     </view>
                 </viewController>
@@ -340,13 +517,15 @@
         <scene sceneID="YQ5-6m-NGh">
             <objects>
                 <viewController title="アンヘル" id="AAt-1L-GcO" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="72o-AS-l1c">
+                    <view key="view" contentMode="scaleToFill" id="72o-AS-l1c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="墨西哥02P" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-Pf-ibE">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="墨西哥02P" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-Pf-ibE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ouH-Pf-ibE" secondAttribute="height" id="7fh-Ey-vNj"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NkI-5v-71W">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -359,6 +538,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ouH-Pf-ibE" firstAttribute="top" secondItem="72o-AS-l1c" secondAttribute="top" id="geh-wZ-JZm"/>
+                            <constraint firstItem="ouH-Pf-ibE" firstAttribute="trailing" secondItem="wgW-QR-VzU" secondAttribute="trailing" id="p9s-tr-ZDA"/>
+                            <constraint firstItem="ouH-Pf-ibE" firstAttribute="leading" secondItem="wgW-QR-VzU" secondAttribute="leading" id="yVx-dQ-adW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wgW-QR-VzU"/>
                     </view>
                     <toolbarItems/>
@@ -373,13 +557,15 @@
         <scene sceneID="y1e-fV-Rbp">
             <objects>
                 <viewController title="キング・オブ・ダイナソー" id="rxb-Ne-9D8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="rVO-oB-UPv">
+                    <view key="view" contentMode="scaleToFill" id="rVO-oB-UPv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="墨西哥03P" translatesAutoresizingMaskIntoConstraints="NO" id="Usp-zv-TTE">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="墨西哥03P" translatesAutoresizingMaskIntoConstraints="NO" id="Usp-zv-TTE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Usp-zv-TTE" secondAttribute="height" id="Zuo-bP-V4g"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVB-Wc-VXd">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -393,6 +579,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Usp-zv-TTE" firstAttribute="trailing" secondItem="iOb-Lo-INb" secondAttribute="trailing" id="bZT-iR-Mm0"/>
+                            <constraint firstItem="Usp-zv-TTE" firstAttribute="top" secondItem="rVO-oB-UPv" secondAttribute="top" id="cfd-4Q-gGH"/>
+                            <constraint firstItem="Usp-zv-TTE" firstAttribute="leading" secondItem="iOb-Lo-INb" secondAttribute="leading" id="hI3-Pb-2tC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iOb-Lo-INb"/>
                     </view>
                     <toolbarItems/>
@@ -407,36 +598,52 @@
         <scene sceneID="6Yh-b0-gvK">
             <objects>
                 <viewController title="金隊" id="eYw-uf-Vnu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="hPP-SF-0vK">
+                    <view key="view" contentMode="scaleToFill" id="hPP-SF-0vK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0f-ux-vEK">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="金隊01"/>
-                                <connections>
-                                    <segue destination="cGy-Xo-ezb" kind="show" id="xyw-8g-puC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuw-bi-0wj">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="金隊02"/>
-                                <connections>
-                                    <segue destination="a4W-iD-AoM" kind="show" id="xkG-jg-6fe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-GH-psj">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="金隊03"/>
-                                <connections>
-                                    <segue destination="JSD-x7-3U0" kind="show" id="KDP-vK-dmR"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhS-2V-VIz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0f-ux-vEK" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="金隊01"/>
+                                        <connections>
+                                            <segue destination="cGy-Xo-ezb" kind="show" id="xyw-8g-puC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuw-bi-0wj" userLabel="Button2">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="金隊02"/>
+                                        <connections>
+                                            <segue destination="a4W-iD-AoM" kind="show" id="xkG-jg-6fe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkr-GH-psj" userLabel="Button3">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="金隊03"/>
+                                        <connections>
+                                            <segue destination="JSD-x7-3U0" kind="show" id="KDP-vK-dmR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Nkr-GH-psj" firstAttribute="height" secondItem="nuw-bi-0wj" secondAttribute="height" id="0P5-dA-X51"/>
+                                    <constraint firstItem="Nkr-GH-psj" firstAttribute="width" secondItem="nuw-bi-0wj" secondAttribute="width" id="AFO-52-Mn4"/>
+                                    <constraint firstItem="f0f-ux-vEK" firstAttribute="height" secondItem="EhS-2V-VIz" secondAttribute="height" id="HgN-QD-Blp"/>
+                                    <constraint firstItem="nuw-bi-0wj" firstAttribute="height" secondItem="f0f-ux-vEK" secondAttribute="height" id="hCf-yY-Eqr"/>
+                                    <constraint firstItem="nuw-bi-0wj" firstAttribute="width" secondItem="f0f-ux-vEK" secondAttribute="width" id="jFO-qH-q2R"/>
+                                    <constraint firstItem="f0f-ux-vEK" firstAttribute="width" secondItem="EhS-2V-VIz" secondAttribute="width" multiplier="1:3" id="y9w-1c-Hwi"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="k2h-kt-LYF" firstAttribute="bottom" secondItem="EhS-2V-VIz" secondAttribute="bottom" id="KRg-Gf-eqG"/>
+                            <constraint firstItem="EhS-2V-VIz" firstAttribute="top" secondItem="hPP-SF-0vK" secondAttribute="top" id="cUA-ya-WKN"/>
+                            <constraint firstAttribute="trailing" secondItem="EhS-2V-VIz" secondAttribute="trailing" id="o10-oo-rEv"/>
+                            <constraint firstItem="EhS-2V-VIz" firstAttribute="leading" secondItem="k2h-kt-LYF" secondAttribute="leading" id="sFP-ND-Jni"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="k2h-kt-LYF"/>
                     </view>
                 </viewController>
@@ -448,13 +655,15 @@
         <scene sceneID="kHf-7u-Qa0">
             <objects>
                 <viewController title="ガンイル" id="a4W-iD-AoM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="5gS-b5-mtm">
+                    <view key="view" contentMode="scaleToFill" id="5gS-b5-mtm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="金隊02P" translatesAutoresizingMaskIntoConstraints="NO" id="UcO-Ep-HIa">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="金隊02P" translatesAutoresizingMaskIntoConstraints="NO" id="UcO-Ep-HIa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="UcO-Ep-HIa" secondAttribute="height" id="42J-ns-xOU"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUJ-7P-JHp">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -467,6 +676,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UcO-Ep-HIa" firstAttribute="trailing" secondItem="2ym-rc-zTH" secondAttribute="trailing" id="f8s-Ft-ghb"/>
+                            <constraint firstItem="UcO-Ep-HIa" firstAttribute="leading" secondItem="2ym-rc-zTH" secondAttribute="leading" id="rhN-ph-zJ1"/>
+                            <constraint firstItem="UcO-Ep-HIa" firstAttribute="top" secondItem="5gS-b5-mtm" secondAttribute="top" id="xf4-Ag-jiE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="2ym-rc-zTH"/>
                     </view>
                     <toolbarItems/>
@@ -481,13 +695,15 @@
         <scene sceneID="sCn-TK-QHv">
             <objects>
                 <viewController title="ルオン" id="JSD-x7-3U0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="1U3-wv-oLU">
+                    <view key="view" contentMode="scaleToFill" id="1U3-wv-oLU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="金隊03P" translatesAutoresizingMaskIntoConstraints="NO" id="ZVq-zP-aY2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="金隊03P" translatesAutoresizingMaskIntoConstraints="NO" id="ZVq-zP-aY2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZVq-zP-aY2" secondAttribute="height" id="6qy-5c-faf"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p03-lK-JeC">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -500,6 +716,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZVq-zP-aY2" firstAttribute="top" secondItem="1U3-wv-oLU" secondAttribute="top" id="Sbr-7J-PJG"/>
+                            <constraint firstItem="ZVq-zP-aY2" firstAttribute="leading" secondItem="wT9-dU-pUN" secondAttribute="leading" id="deo-lT-GTb"/>
+                            <constraint firstItem="ZVq-zP-aY2" firstAttribute="trailing" secondItem="wT9-dU-pUN" secondAttribute="trailing" id="qsY-T4-VJP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wT9-dU-pUN"/>
                     </view>
                     <toolbarItems/>
@@ -514,13 +735,15 @@
         <scene sceneID="oEu-6R-2Kb">
             <objects>
                 <viewController title="キム" id="cGy-Xo-ezb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="2PZ-Bo-QW1">
+                    <view key="view" contentMode="scaleToFill" id="2PZ-Bo-QW1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="金隊01P" translatesAutoresizingMaskIntoConstraints="NO" id="vfX-j0-fci">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="金隊01P" translatesAutoresizingMaskIntoConstraints="NO" id="vfX-j0-fci">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vfX-j0-fci" secondAttribute="height" id="3bi-oo-dMo"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-te-nKP">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -533,6 +756,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vfX-j0-fci" firstAttribute="leading" secondItem="H0f-aK-vAj" secondAttribute="leading" id="FPI-hz-unD"/>
+                            <constraint firstItem="vfX-j0-fci" firstAttribute="top" secondItem="2PZ-Bo-QW1" secondAttribute="top" id="G1r-zu-uk9"/>
+                            <constraint firstItem="vfX-j0-fci" firstAttribute="trailing" secondItem="H0f-aK-vAj" secondAttribute="trailing" id="N39-B0-dzR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="H0f-aK-vAj"/>
                     </view>
                     <toolbarItems/>
@@ -547,13 +775,15 @@
         <scene sceneID="Qwy-i9-IhN">
             <objects>
                 <viewController title="ラモン" id="IzG-Nu-Ij7" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="PbD-5o-yBx">
+                    <view key="view" contentMode="scaleToFill" id="PbD-5o-yBx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="墨西哥01P" translatesAutoresizingMaskIntoConstraints="NO" id="09H-ma-wcI">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="墨西哥01P" translatesAutoresizingMaskIntoConstraints="NO" id="09H-ma-wcI">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="09H-ma-wcI" secondAttribute="height" id="yL9-uj-uBf"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-Pm-OpD">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -566,6 +796,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="09H-ma-wcI" firstAttribute="top" secondItem="PbD-5o-yBx" secondAttribute="top" id="5Fl-65-gOj"/>
+                            <constraint firstItem="09H-ma-wcI" firstAttribute="trailing" secondItem="NsN-SE-AYD" secondAttribute="trailing" id="lzc-bW-cwS"/>
+                            <constraint firstItem="09H-ma-wcI" firstAttribute="leading" secondItem="NsN-SE-AYD" secondAttribute="leading" id="qXQ-Vq-vDI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NsN-SE-AYD"/>
                     </view>
                     <toolbarItems/>
@@ -580,13 +815,15 @@
         <scene sceneID="37Q-eM-2Pm">
             <objects>
                 <viewController title="ナコルル" id="nei-98-FLU" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Ovy-do-i6S">
+                    <view key="view" contentMode="scaleToFill" id="Ovy-do-i6S">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="異世界01P" translatesAutoresizingMaskIntoConstraints="NO" id="Gme-NR-t52">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="異世界01P" translatesAutoresizingMaskIntoConstraints="NO" id="Gme-NR-t52">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gme-NR-t52" secondAttribute="height" id="WQf-8g-kPT"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhb-r6-Q4s">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -599,6 +836,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gme-NR-t52" firstAttribute="top" secondItem="Ovy-do-i6S" secondAttribute="top" id="WVq-1i-932"/>
+                            <constraint firstItem="Gme-NR-t52" firstAttribute="trailing" secondItem="nOV-ck-Kay" secondAttribute="trailing" id="fPb-ud-FQD"/>
+                            <constraint firstItem="Gme-NR-t52" firstAttribute="leading" secondItem="nOV-ck-Kay" secondAttribute="leading" id="rQv-D2-Um7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nOV-ck-Kay"/>
                     </view>
                     <toolbarItems/>
@@ -613,13 +855,15 @@
         <scene sceneID="6SI-YB-AL9">
             <objects>
                 <viewController title="ムイムイ" id="ASO-3X-PWW" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="1Gm-3w-F8f">
+                    <view key="view" contentMode="scaleToFill" id="1Gm-3w-F8f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="異世界02P" translatesAutoresizingMaskIntoConstraints="NO" id="ejH-tm-fGH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="異世界02P" translatesAutoresizingMaskIntoConstraints="NO" id="ejH-tm-fGH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ejH-tm-fGH" secondAttribute="height" id="nLf-Lp-ahw"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSB-MI-8U7">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -632,6 +876,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ejH-tm-fGH" firstAttribute="leading" secondItem="MJM-R1-n9m" secondAttribute="leading" id="M1p-Gv-R2W"/>
+                            <constraint firstItem="ejH-tm-fGH" firstAttribute="top" secondItem="1Gm-3w-F8f" secondAttribute="top" id="Puo-Mc-dEd"/>
+                            <constraint firstItem="ejH-tm-fGH" firstAttribute="trailing" secondItem="MJM-R1-n9m" secondAttribute="trailing" id="hg6-Un-m0t"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MJM-R1-n9m"/>
                     </view>
                     <toolbarItems/>
@@ -646,13 +895,15 @@
         <scene sceneID="d4R-c9-2It">
             <objects>
                 <viewController title="ラブ・ハート" id="cdM-zJ-jyR" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="VCg-qX-yxd">
+                    <view key="view" contentMode="scaleToFill" id="VCg-qX-yxd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="異世界03P" translatesAutoresizingMaskIntoConstraints="NO" id="yWR-ea-07O">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="異世界03P" translatesAutoresizingMaskIntoConstraints="NO" id="yWR-ea-07O">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yWR-ea-07O" secondAttribute="height" id="9be-XJ-G9x"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8I-J8-YCw">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -665,6 +916,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yWR-ea-07O" firstAttribute="trailing" secondItem="JYE-SX-tVT" secondAttribute="trailing" id="39E-mG-NGV"/>
+                            <constraint firstItem="yWR-ea-07O" firstAttribute="top" secondItem="VCg-qX-yxd" secondAttribute="top" id="JbA-XE-HAd"/>
+                            <constraint firstItem="yWR-ea-07O" firstAttribute="leading" secondItem="JYE-SX-tVT" secondAttribute="leading" id="qYD-Tl-UWA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JYE-SX-tVT"/>
                     </view>
                     <toolbarItems/>
@@ -679,36 +935,52 @@
         <scene sceneID="Moe-PF-7pY">
             <objects>
                 <viewController title="南美隊" id="dmf-F8-eFH" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="bb7-sc-fqR">
+                    <view key="view" contentMode="scaleToFill" id="bb7-sc-fqR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-ax-QgO">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="南美01"/>
-                                <connections>
-                                    <segue destination="L4i-C0-nK0" kind="show" id="q5x-vn-wj4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-yW-B20">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="南美02"/>
-                                <connections>
-                                    <segue destination="TMm-jR-cja" kind="show" id="mE2-qT-ara"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-Mh-vyY">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="南美03"/>
-                                <connections>
-                                    <segue destination="4Te-Gg-1Ym" kind="show" id="lef-Je-yH0"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liy-4c-rmZ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajM-ax-QgO" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
+                                        <state key="normal" backgroundImage="南美01"/>
+                                        <connections>
+                                            <segue destination="L4i-C0-nK0" kind="show" id="q5x-vn-wj4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLv-yW-B20" userLabel="Button2">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="736"/>
+                                        <state key="normal" backgroundImage="南美02"/>
+                                        <connections>
+                                            <segue destination="TMm-jR-cja" kind="show" id="mE2-qT-ara"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsG-Mh-vyY" userLabel="Button3">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="736"/>
+                                        <state key="normal" backgroundImage="南美03"/>
+                                        <connections>
+                                            <segue destination="4Te-Gg-1Ym" kind="show" id="lef-Je-yH0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ajM-ax-QgO" firstAttribute="width" secondItem="liy-4c-rmZ" secondAttribute="width" multiplier="1:3" id="2Gb-ak-ARH"/>
+                                    <constraint firstItem="DLv-yW-B20" firstAttribute="height" secondItem="ajM-ax-QgO" secondAttribute="height" id="A35-OO-RgF"/>
+                                    <constraint firstItem="AsG-Mh-vyY" firstAttribute="height" secondItem="DLv-yW-B20" secondAttribute="height" id="FoU-Pq-Fgb"/>
+                                    <constraint firstItem="ajM-ax-QgO" firstAttribute="height" secondItem="liy-4c-rmZ" secondAttribute="height" id="QcD-8u-Rwr"/>
+                                    <constraint firstItem="AsG-Mh-vyY" firstAttribute="width" secondItem="DLv-yW-B20" secondAttribute="width" id="RBI-Wm-5SD"/>
+                                    <constraint firstItem="DLv-yW-B20" firstAttribute="width" secondItem="ajM-ax-QgO" secondAttribute="width" id="rgK-46-V9s"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="liy-4c-rmZ" secondAttribute="bottom" id="X5X-Eg-wJd"/>
+                            <constraint firstItem="liy-4c-rmZ" firstAttribute="trailing" secondItem="j7O-db-Yvs" secondAttribute="trailing" id="h6A-dJ-sfX"/>
+                            <constraint firstItem="liy-4c-rmZ" firstAttribute="top" secondItem="bb7-sc-fqR" secondAttribute="top" id="p3n-pl-YaS"/>
+                            <constraint firstItem="liy-4c-rmZ" firstAttribute="leading" secondItem="j7O-db-Yvs" secondAttribute="leading" id="r48-fL-7K8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="j7O-db-Yvs"/>
                     </view>
                 </viewController>
@@ -720,29 +992,26 @@
         <scene sceneID="hds-CB-3YU">
             <objects>
                 <viewController title="官方招待隊" id="04w-bR-5vy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Brz-Ud-YDN">
+                    <view key="view" contentMode="scaleToFill" id="Brz-Ud-YDN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-Wo-wk5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-Wo-wk5" userLabel="Button1">
                                 <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="官方招待01"/>
                                 <connections>
                                     <segue destination="Ftm-8N-n6V" kind="show" id="lWZ-Gc-1M3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-pL-6mH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3l-pL-6mH" userLabel="Button2">
                                 <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="官方招待02"/>
                                 <connections>
                                     <segue destination="n4e-II-4b8" kind="show" id="hls-gx-Y00"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehC-qd-9C3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehC-qd-9C3" userLabel="Button3">
                                 <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="官方招待03"/>
                                 <connections>
                                     <segue destination="Kea-8K-u3z" kind="show" id="Xud-7x-qXr"/>
@@ -750,6 +1019,22 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="J3l-pL-6mH" firstAttribute="top" secondItem="Brz-Ud-YDN" secondAttribute="top" id="1cG-wg-Cp7"/>
+                            <constraint firstItem="0mt-Wo-wk5" firstAttribute="leading" secondItem="yNg-ue-D8h" secondAttribute="leading" id="2aE-he-R6L"/>
+                            <constraint firstItem="ehC-qd-9C3" firstAttribute="leading" secondItem="J3l-pL-6mH" secondAttribute="trailing" id="BFn-al-h7Q"/>
+                            <constraint firstItem="ehC-qd-9C3" firstAttribute="height" secondItem="0mt-Wo-wk5" secondAttribute="height" id="GpO-iw-dFS"/>
+                            <constraint firstItem="J3l-pL-6mH" firstAttribute="width" secondItem="0mt-Wo-wk5" secondAttribute="width" id="INC-pE-yQ5"/>
+                            <constraint firstItem="0mt-Wo-wk5" firstAttribute="height" secondItem="Brz-Ud-YDN" secondAttribute="height" id="Tsd-FH-idV"/>
+                            <constraint firstItem="ehC-qd-9C3" firstAttribute="width" secondItem="0mt-Wo-wk5" secondAttribute="width" id="X4W-Jd-Wj2"/>
+                            <constraint firstItem="J3l-pL-6mH" firstAttribute="height" secondItem="0mt-Wo-wk5" secondAttribute="height" id="ap7-KC-fGK"/>
+                            <constraint firstAttribute="bottom" secondItem="J3l-pL-6mH" secondAttribute="bottom" id="bte-zy-jHv"/>
+                            <constraint firstAttribute="bottom" secondItem="ehC-qd-9C3" secondAttribute="bottom" id="kVv-O1-jNi"/>
+                            <constraint firstAttribute="trailing" secondItem="ehC-qd-9C3" secondAttribute="trailing" id="n3J-ni-LFS"/>
+                            <constraint firstItem="0mt-Wo-wk5" firstAttribute="top" secondItem="Brz-Ud-YDN" secondAttribute="top" id="nKi-ea-KF2"/>
+                            <constraint firstItem="0mt-Wo-wk5" firstAttribute="width" secondItem="Brz-Ud-YDN" secondAttribute="width" multiplier="1:3" id="xfW-P8-WMJ"/>
+                            <constraint firstItem="J3l-pL-6mH" firstAttribute="leading" secondItem="0mt-Wo-wk5" secondAttribute="trailing" id="yZV-M5-ddN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yNg-ue-D8h"/>
                     </view>
                 </viewController>
@@ -760,71 +1045,55 @@
         <!--八神隊-->
         <scene sceneID="0xE-gX-xYA">
             <objects>
-                <viewController title="八神隊" id="lFE-bl-yfM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="5v4-7I-pg9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD8-8A-m3B">
-                                <rect key="frame" x="0.0" y="0.0" width="125" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神01"/>
-                                <connections>
-                                    <segue destination="Pc8-Sq-tGV" kind="show" id="0fy-sw-8rK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unP-Yk-O9C">
-                                <rect key="frame" x="125" y="0.0" width="125" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神02"/>
-                                <connections>
-                                    <segue destination="uA5-vu-Tu8" kind="show" id="V7K-Zo-nu7"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kN-Bl-KEt">
-                                <rect key="frame" x="250" y="0.0" width="125" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神03"/>
-                                <connections>
-                                    <segue destination="Bnt-zR-IYk" kind="show" id="vEP-05-IPk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="TxV-6X-OiW"/>
-                    </view>
-                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIW-K1-AIW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2294" y="90"/>
-        </scene>
-        <!--八神隊-->
-        <scene sceneID="GWS-ze-L5K">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gmf-E4-Xhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="八神隊" id="hxJ-vp-9yB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="8Vl-Vg-240">
+                <viewController title="八神隊" id="lFE-bl-yfM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5v4-7I-pg9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-nW-kBQ">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神01"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiu-mM-aQu">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神02"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bwi-YM-s1T">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="八神03"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9f-iJ-gn4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD8-8A-m3B" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="八神01"/>
+                                        <connections>
+                                            <segue destination="Pc8-Sq-tGV" kind="show" id="0fy-sw-8rK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unP-Yk-O9C" userLabel="Button2">
+                                        <rect key="frame" x="138" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="八神02"/>
+                                        <connections>
+                                            <segue destination="uA5-vu-Tu8" kind="show" id="V7K-Zo-nu7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kN-Bl-KEt" userLabel="Button3">
+                                        <rect key="frame" x="276" y="0.0" width="138" height="687"/>
+                                        <state key="normal" backgroundImage="八神03"/>
+                                        <connections>
+                                            <segue destination="Bnt-zR-IYk" kind="show" id="vEP-05-IPk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5kN-Bl-KEt" firstAttribute="height" secondItem="unP-Yk-O9C" secondAttribute="height" id="A2T-fm-Pa6"/>
+                                    <constraint firstItem="unP-Yk-O9C" firstAttribute="width" secondItem="TD8-8A-m3B" secondAttribute="width" id="Bad-98-aYr"/>
+                                    <constraint firstItem="TD8-8A-m3B" firstAttribute="width" secondItem="y9f-iJ-gn4" secondAttribute="width" multiplier="1:3" id="J9M-UX-8lu"/>
+                                    <constraint firstItem="TD8-8A-m3B" firstAttribute="height" secondItem="y9f-iJ-gn4" secondAttribute="height" id="i0c-hs-h8b"/>
+                                    <constraint firstItem="unP-Yk-O9C" firstAttribute="height" secondItem="TD8-8A-m3B" secondAttribute="height" id="tAe-u6-l8m"/>
+                                    <constraint firstItem="5kN-Bl-KEt" firstAttribute="width" secondItem="unP-Yk-O9C" secondAttribute="width" id="twg-q8-B9I"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <viewLayoutGuide key="safeArea" id="DSg-q0-UfR"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="y9f-iJ-gn4" secondAttribute="trailing" id="EXz-gG-oyO"/>
+                            <constraint firstItem="y9f-iJ-gn4" firstAttribute="top" secondItem="5v4-7I-pg9" secondAttribute="top" id="Kj3-ui-P30"/>
+                            <constraint firstItem="TxV-6X-OiW" firstAttribute="bottom" secondItem="y9f-iJ-gn4" secondAttribute="bottom" id="LVh-8A-SvC"/>
+                            <constraint firstItem="y9f-iJ-gn4" firstAttribute="leading" secondItem="TxV-6X-OiW" secondAttribute="leading" id="wh1-XD-k71"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TxV-6X-OiW"/>
                     </view>
                 </viewController>
             </objects>
@@ -834,36 +1103,47 @@
         <scene sceneID="UjG-pa-Yho">
             <objects>
                 <viewController title="日本隊" id="KlP-iI-2d3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="6G3-68-1ia">
+                    <view key="view" contentMode="scaleToFill" id="6G3-68-1ia">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-mc-OzU">
-                                <rect key="frame" x="0.0" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtm-mc-OzU" userLabel="Button1">
+                                <rect key="frame" x="0.0" y="0.0" width="138" height="667"/>
                                 <state key="normal" backgroundImage="日本01"/>
                                 <connections>
                                     <segue destination="4c5-If-c19" kind="show" id="hoL-Q4-ZdX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-c6-PYH">
-                                <rect key="frame" x="138" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="日本02"/>
-                                <connections>
-                                    <segue destination="6HN-vO-puA" kind="show" id="d1j-fF-ZQU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJL-Ak-RIM">
-                                <rect key="frame" x="276" y="0.0" width="138" height="736"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJL-Ak-RIM" userLabel="Button3">
+                                <rect key="frame" x="276" y="0.0" width="138" height="667"/>
                                 <state key="normal" backgroundImage="日本03"/>
                                 <connections>
                                     <segue destination="LO4-N1-fOd" kind="show" id="ObO-Bh-OyJ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCb-c6-PYH" userLabel="Button2">
+                                <rect key="frame" x="138" y="0.0" width="138" height="667"/>
+                                <state key="normal" backgroundImage="日本02"/>
+                                <connections>
+                                    <segue destination="6HN-vO-puA" kind="show" id="d1j-fF-ZQU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dtm-mc-OzU" firstAttribute="height" secondItem="6G3-68-1ia" secondAttribute="height" multiplier="736:812" id="3Qg-vu-h38"/>
+                            <constraint firstItem="wJL-Ak-RIM" firstAttribute="leading" secondItem="iCb-c6-PYH" secondAttribute="trailing" id="4dx-8A-GSp"/>
+                            <constraint firstItem="wJL-Ak-RIM" firstAttribute="height" secondItem="6G3-68-1ia" secondAttribute="height" multiplier="736:812" id="6WO-PZ-peF"/>
+                            <constraint firstItem="wJL-Ak-RIM" firstAttribute="top" secondItem="6G3-68-1ia" secondAttribute="top" id="86F-qJ-K8H"/>
+                            <constraint firstItem="iCb-c6-PYH" firstAttribute="height" secondItem="6G3-68-1ia" secondAttribute="height" multiplier="736:812" id="8su-RU-weT"/>
+                            <constraint firstItem="wJL-Ak-RIM" firstAttribute="width" secondItem="6G3-68-1ia" secondAttribute="width" multiplier="1:3" id="Adj-3N-Q90"/>
+                            <constraint firstItem="iCb-c6-PYH" firstAttribute="top" secondItem="6G3-68-1ia" secondAttribute="top" id="Jom-wY-gf1"/>
+                            <constraint firstItem="iCb-c6-PYH" firstAttribute="width" secondItem="6G3-68-1ia" secondAttribute="width" multiplier="1:3" id="llJ-3a-Jba"/>
+                            <constraint firstItem="dtm-mc-OzU" firstAttribute="width" secondItem="6G3-68-1ia" secondAttribute="width" multiplier="1:3" id="mEB-zc-0KD"/>
+                            <constraint firstItem="wJL-Ak-RIM" firstAttribute="trailing" secondItem="SZb-38-Ym3" secondAttribute="trailing" id="qkX-cA-WpD"/>
+                            <constraint firstItem="dtm-mc-OzU" firstAttribute="leading" secondItem="SZb-38-Ym3" secondAttribute="leading" id="scg-Z6-WHk"/>
+                            <constraint firstItem="dtm-mc-OzU" firstAttribute="top" secondItem="6G3-68-1ia" secondAttribute="top" id="wbc-FM-S51"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SZb-38-Ym3"/>
                     </view>
                 </viewController>
@@ -875,13 +1155,15 @@
         <scene sceneID="rd1-ds-rmC">
             <objects>
                 <viewController id="4c5-If-c19" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="mYe-Mr-QgR">
+                    <view key="view" contentMode="scaleToFill" id="mYe-Mr-QgR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="日本01P" translatesAutoresizingMaskIntoConstraints="NO" id="lWo-f1-Ssm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日本01P" translatesAutoresizingMaskIntoConstraints="NO" id="lWo-f1-Ssm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="lWo-f1-Ssm" secondAttribute="height" multiplier="69:64" id="zVH-7U-wOB"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hd6-0r-TGw">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -894,6 +1176,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lWo-f1-Ssm" firstAttribute="trailing" secondItem="Yef-kE-68s" secondAttribute="trailing" id="O6B-TB-XNp"/>
+                            <constraint firstItem="lWo-f1-Ssm" firstAttribute="top" secondItem="mYe-Mr-QgR" secondAttribute="top" id="snm-P5-yBb"/>
+                            <constraint firstItem="lWo-f1-Ssm" firstAttribute="leading" secondItem="Yef-kE-68s" secondAttribute="leading" id="wOO-ia-r30"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Yef-kE-68s"/>
                     </view>
                     <toolbarItems/>
@@ -908,13 +1195,15 @@
         <scene sceneID="ike-a0-6Kn">
             <objects>
                 <viewController id="6HN-vO-puA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="NTc-aB-0GY">
+                    <view key="view" contentMode="scaleToFill" id="NTc-aB-0GY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="日本02P" translatesAutoresizingMaskIntoConstraints="NO" id="TfZ-Tj-SYY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日本02P" translatesAutoresizingMaskIntoConstraints="NO" id="TfZ-Tj-SYY">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TfZ-Tj-SYY" secondAttribute="height" id="3Fj-Ft-zZu"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sZN-nn-5hY">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -927,6 +1216,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TfZ-Tj-SYY" firstAttribute="trailing" secondItem="dAa-bQ-b9i" secondAttribute="trailing" id="fNA-NA-b9E"/>
+                            <constraint firstItem="TfZ-Tj-SYY" firstAttribute="top" secondItem="NTc-aB-0GY" secondAttribute="top" id="gbc-AH-azp"/>
+                            <constraint firstItem="TfZ-Tj-SYY" firstAttribute="leading" secondItem="dAa-bQ-b9i" secondAttribute="leading" id="uEn-3F-44r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dAa-bQ-b9i"/>
                     </view>
                     <navigationItem key="navigationItem" title="二階堂　紅丸" id="fok-qb-ocO"/>
@@ -939,13 +1233,15 @@
         <scene sceneID="oEb-Y0-j8Y">
             <objects>
                 <viewController id="uA5-vu-Tu8" userLabel="マチュア" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="bqz-do-p3d">
+                    <view key="view" contentMode="scaleToFill" id="bqz-do-p3d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="八神02P" translatesAutoresizingMaskIntoConstraints="NO" id="R2O-Xj-Kfd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八神02P" translatesAutoresizingMaskIntoConstraints="NO" id="R2O-Xj-Kfd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R2O-Xj-Kfd" secondAttribute="height" id="51W-zR-OBx"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lW-8n-II0">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -958,6 +1254,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R2O-Xj-Kfd" firstAttribute="trailing" secondItem="BBU-KY-y3G" secondAttribute="trailing" id="CT2-Va-K0B"/>
+                            <constraint firstItem="R2O-Xj-Kfd" firstAttribute="top" secondItem="bqz-do-p3d" secondAttribute="top" id="KKE-Ul-DBh"/>
+                            <constraint firstItem="R2O-Xj-Kfd" firstAttribute="leading" secondItem="BBU-KY-y3G" secondAttribute="leading" id="yj6-HX-tvD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BBU-KY-y3G"/>
                     </view>
                     <toolbarItems/>
@@ -972,13 +1273,15 @@
         <scene sceneID="x2T-U9-0RT">
             <objects>
                 <viewController id="Pc8-Sq-tGV" userLabel="八神 庵" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="WAa-z0-vwM">
+                    <view key="view" contentMode="scaleToFill" id="WAa-z0-vwM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="八神01P" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-tX-Zmn">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八神01P" translatesAutoresizingMaskIntoConstraints="NO" id="v7x-tX-Zmn">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v7x-tX-Zmn" secondAttribute="height" id="Hwi-td-nY5"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xKP-yu-Kr2">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -991,6 +1294,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v7x-tX-Zmn" firstAttribute="leading" secondItem="wEK-KA-dyy" secondAttribute="leading" id="NZy-cz-hdr"/>
+                            <constraint firstItem="v7x-tX-Zmn" firstAttribute="top" secondItem="WAa-z0-vwM" secondAttribute="top" id="aCO-zf-Ha2"/>
+                            <constraint firstItem="v7x-tX-Zmn" firstAttribute="trailing" secondItem="wEK-KA-dyy" secondAttribute="trailing" id="tKS-xP-x1K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wEK-KA-dyy"/>
                     </view>
                     <toolbarItems/>
@@ -1005,13 +1313,15 @@
         <scene sceneID="Imf-iV-NQI">
             <objects>
                 <viewController title="シルヴィ・ポーラ・ポーラ" id="Ftm-8N-n6V" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="iA8-T5-m3j">
+                    <view key="view" contentMode="scaleToFill" id="iA8-T5-m3j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="官方招待01P" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-Du-x1b">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="官方招待01P" translatesAutoresizingMaskIntoConstraints="NO" id="CPD-Du-x1b">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="CPD-Du-x1b" secondAttribute="height" id="GEg-yQ-Qci"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ4-Af-K57">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1024,6 +1334,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CPD-Du-x1b" firstAttribute="leading" secondItem="NIe-MX-bvG" secondAttribute="leading" id="HWu-Uq-EQd"/>
+                            <constraint firstItem="CPD-Du-x1b" firstAttribute="trailing" secondItem="NIe-MX-bvG" secondAttribute="trailing" id="Yoz-gf-oGm"/>
+                            <constraint firstItem="CPD-Du-x1b" firstAttribute="top" secondItem="iA8-T5-m3j" secondAttribute="top" id="aWt-Rb-SaS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="NIe-MX-bvG"/>
                     </view>
                     <toolbarItems/>
@@ -1038,13 +1353,15 @@
         <scene sceneID="QIK-wC-c6f">
             <objects>
                 <viewController title="ネルソン" id="L4i-C0-nK0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="IQq-m4-jHG">
+                    <view key="view" contentMode="scaleToFill" id="IQq-m4-jHG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="南美01P" translatesAutoresizingMaskIntoConstraints="NO" id="EH6-kY-9me">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="南美01P" translatesAutoresizingMaskIntoConstraints="NO" id="EH6-kY-9me">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EH6-kY-9me" secondAttribute="height" id="Bqc-Rp-k0g"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COd-9b-b6P">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1057,6 +1374,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EH6-kY-9me" firstAttribute="top" secondItem="IQq-m4-jHG" secondAttribute="top" id="5do-J5-mdn"/>
+                            <constraint firstItem="EH6-kY-9me" firstAttribute="trailing" secondItem="ZAZ-Gu-AqB" secondAttribute="trailing" id="FoG-8i-t7B"/>
+                            <constraint firstItem="EH6-kY-9me" firstAttribute="leading" secondItem="ZAZ-Gu-AqB" secondAttribute="leading" id="Xbx-Wb-U7T"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZAZ-Gu-AqB"/>
                     </view>
                     <toolbarItems/>
@@ -1071,13 +1393,15 @@
         <scene sceneID="B0V-Sr-VDg">
             <objects>
                 <viewController title="サリナ" id="TMm-jR-cja" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="B36-26-ibD">
+                    <view key="view" contentMode="scaleToFill" id="B36-26-ibD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="南美02P" translatesAutoresizingMaskIntoConstraints="NO" id="WOc-Gz-ao9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="南美02P" translatesAutoresizingMaskIntoConstraints="NO" id="WOc-Gz-ao9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WOc-Gz-ao9" secondAttribute="height" id="Gaz-h4-KZW"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbl-gp-wat">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1090,6 +1414,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WOc-Gz-ao9" firstAttribute="top" secondItem="B36-26-ibD" secondAttribute="top" id="QNW-Fo-dqL"/>
+                            <constraint firstItem="WOc-Gz-ao9" firstAttribute="trailing" secondItem="0GN-1Q-ZUU" secondAttribute="trailing" id="TE1-Sy-EKQ"/>
+                            <constraint firstItem="WOc-Gz-ao9" firstAttribute="leading" secondItem="0GN-1Q-ZUU" secondAttribute="leading" id="hqa-UK-n6b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0GN-1Q-ZUU"/>
                     </view>
                     <toolbarItems/>
@@ -1104,13 +1433,15 @@
         <scene sceneID="89C-Zi-GH6">
             <objects>
                 <viewController title="バンデラス・ハットリ" id="4Te-Gg-1Ym" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="TfT-KB-6tS">
+                    <view key="view" contentMode="scaleToFill" id="TfT-KB-6tS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="南美03P" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-iC-ykK">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="南美03P" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-iC-ykK">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Ic-iC-ykK" secondAttribute="height" id="2dI-Su-v7n"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-dd-hm3">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1123,6 +1454,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Ic-iC-ykK" firstAttribute="trailing" secondItem="qaZ-tT-yIj" secondAttribute="trailing" id="eLc-J6-ktz"/>
+                            <constraint firstItem="7Ic-iC-ykK" firstAttribute="leading" secondItem="qaZ-tT-yIj" secondAttribute="leading" id="qHQ-E9-yZa"/>
+                            <constraint firstItem="7Ic-iC-ykK" firstAttribute="top" secondItem="TfT-KB-6tS" secondAttribute="top" id="uj3-0O-SOU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qaZ-tT-yIj"/>
                     </view>
                     <toolbarItems/>
@@ -1137,13 +1473,15 @@
         <scene sceneID="HAR-xf-qZN">
             <objects>
                 <viewController title="ククリ" id="n4e-II-4b8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="Kxg-kQ-vPO">
+                    <view key="view" contentMode="scaleToFill" id="Kxg-kQ-vPO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="官方招待02P" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-Dy-D7I">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="官方招待02P" translatesAutoresizingMaskIntoConstraints="NO" id="fsw-Dy-D7I">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fsw-Dy-D7I" secondAttribute="height" id="zrJ-oX-XJJ"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kt8-lV-znY">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1156,6 +1494,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fsw-Dy-D7I" firstAttribute="leading" secondItem="xw4-Aw-blr" secondAttribute="leading" id="8of-yI-xQQ"/>
+                            <constraint firstItem="fsw-Dy-D7I" firstAttribute="top" secondItem="Kxg-kQ-vPO" secondAttribute="top" id="LZd-7I-IXg"/>
+                            <constraint firstItem="fsw-Dy-D7I" firstAttribute="trailing" secondItem="xw4-Aw-blr" secondAttribute="trailing" id="k3v-6l-fw7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xw4-Aw-blr"/>
                     </view>
                     <toolbarItems/>
@@ -1170,13 +1513,15 @@
         <scene sceneID="uLJ-gf-5Og">
             <objects>
                 <viewController title="ミアン" id="Kea-8K-u3z" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="o0y-iI-CQG">
+                    <view key="view" contentMode="scaleToFill" id="o0y-iI-CQG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="官方招待03P" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-OQ-6wd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="官方招待03P" translatesAutoresizingMaskIntoConstraints="NO" id="YIc-OQ-6wd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YIc-OQ-6wd" secondAttribute="height" id="e6S-mo-fr6"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-3U-n9x">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1189,6 +1534,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YIc-OQ-6wd" firstAttribute="top" secondItem="o0y-iI-CQG" secondAttribute="top" id="KIo-cX-POV"/>
+                            <constraint firstItem="YIc-OQ-6wd" firstAttribute="trailing" secondItem="oeQ-M8-rxd" secondAttribute="trailing" id="ULE-E5-gZg"/>
+                            <constraint firstItem="YIc-OQ-6wd" firstAttribute="leading" secondItem="oeQ-M8-rxd" secondAttribute="leading" id="oZp-dQ-0FE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oeQ-M8-rxd"/>
                     </view>
                     <toolbarItems/>
@@ -1203,13 +1553,15 @@
         <scene sceneID="uzQ-JS-dUf">
             <objects>
                 <viewController id="Bnt-zR-IYk" userLabel="バイス" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="441-lS-ja4">
+                    <view key="view" contentMode="scaleToFill" id="441-lS-ja4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="八神03P" translatesAutoresizingMaskIntoConstraints="NO" id="1Zv-Lo-s0P">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八神03P" translatesAutoresizingMaskIntoConstraints="NO" id="1Zv-Lo-s0P">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1Zv-Lo-s0P" secondAttribute="height" id="p9k-YY-Npk"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIp-Yu-GWg">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1222,6 +1574,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Zv-Lo-s0P" firstAttribute="leading" secondItem="Td1-Be-hrQ" secondAttribute="leading" id="L1p-9I-tNP"/>
+                            <constraint firstItem="1Zv-Lo-s0P" firstAttribute="trailing" secondItem="Td1-Be-hrQ" secondAttribute="trailing" id="V5W-bN-7Ra"/>
+                            <constraint firstItem="1Zv-Lo-s0P" firstAttribute="top" secondItem="441-lS-ja4" secondAttribute="top" id="iDQ-JL-xlf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Td1-Be-hrQ"/>
                     </view>
                     <toolbarItems/>
@@ -1236,13 +1593,15 @@
         <scene sceneID="tpQ-Aq-pe1">
             <objects>
                 <viewController id="LO4-N1-fOd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="taU-4b-ODv">
+                    <view key="view" contentMode="scaleToFill" id="taU-4b-ODv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="日本03P" translatesAutoresizingMaskIntoConstraints="NO" id="d2x-Lw-lbR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="日本03P" translatesAutoresizingMaskIntoConstraints="NO" id="d2x-Lw-lbR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="d2x-Lw-lbR" secondAttribute="height" id="8nZ-G5-Tls"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ex0-r3-Xmf">
                                 <rect key="frame" x="0.0" y="385" width="414" height="351"/>
@@ -1255,6 +1614,11 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d2x-Lw-lbR" firstAttribute="top" secondItem="taU-4b-ODv" secondAttribute="top" id="5Mo-NT-kjk"/>
+                            <constraint firstItem="d2x-Lw-lbR" firstAttribute="trailing" secondItem="Tkk-tm-zbc" secondAttribute="trailing" id="5ab-kX-ktr"/>
+                            <constraint firstItem="d2x-Lw-lbR" firstAttribute="leading" secondItem="Tkk-tm-zbc" secondAttribute="leading" id="ioh-ba-j7b"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tkk-tm-zbc"/>
                     </view>
                     <navigationItem key="navigationItem" title="大門　五郎" id="oIM-Cw-oCO"/>
@@ -1271,7 +1635,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aC7-yG-GnZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1297,6 +1661,7 @@
                         <segue destination="qwA-Qx-ZUn" kind="relationship" relationship="viewControllers" id="iuQ-nj-2cY"/>
                         <segue destination="u39-Te-LlF" kind="relationship" relationship="viewControllers" id="3Br-hi-EXH"/>
                         <segue destination="4TH-U2-q0L" kind="relationship" relationship="viewControllers" id="StJ-bd-pqA"/>
+                        <segue destination="qwT-lc-Kfr" kind="relationship" relationship="viewControllers" id="I8q-Fq-xcg"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJc-H8-fZh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1307,7 +1672,7 @@
         <scene sceneID="4NV-Rc-RDL">
             <objects>
                 <viewController title="Story" id="s0N-If-WDx" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="ruf-yb-1ak">
+                    <view key="view" contentMode="scaleToFill" id="ruf-yb-1ak">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1330,7 +1695,7 @@
             <objects>
                 <tableViewController title="Play" id="0we-gD-AiY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BRB-HC-QGj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1438,15 +1803,15 @@
         <scene sceneID="FiU-Y1-DSl">
             <objects>
                 <viewController id="VWg-ll-c6R" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="v6g-1F-fH8">
+                    <view key="view" contentMode="scaleToFill" id="v6g-1F-fH8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="八神01P" translatesAutoresizingMaskIntoConstraints="NO" id="JhU-bJ-bX7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VLh-CS-NdZ">
-                                <rect key="frame" x="0.0" y="105" width="414" height="522"/>
+                                <rect key="frame" x="0.0" y="149" width="414" height="429"/>
                                 <connections>
                                     <segue destination="0we-gD-AiY" kind="embed" id="0YB-V6-cSV"/>
                                 </connections>
@@ -1475,8 +1840,8 @@
         <scene sceneID="2A4-Zs-g7f">
             <objects>
                 <viewController title="Play01" id="lfJ-kf-zyJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="5za-dE-cRb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="5za-dE-cRb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play01" translatesAutoresizingMaskIntoConstraints="NO" id="tBv-bb-8e9">
@@ -1496,8 +1861,8 @@
         <scene sceneID="ezW-nM-FPk">
             <objects>
                 <viewController title="Play02" id="vPA-u3-dzk" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="UuH-Vc-Qyf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="UuH-Vc-Qyf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play02" translatesAutoresizingMaskIntoConstraints="NO" id="tmd-mn-Usg">
@@ -1517,8 +1882,8 @@
         <scene sceneID="QDS-MQ-kqo">
             <objects>
                 <viewController title="Play03" id="Jin-3Z-lk8" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="9fc-33-kkA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="9fc-33-kkA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play03" translatesAutoresizingMaskIntoConstraints="NO" id="Nbe-A6-kdW">
@@ -1538,8 +1903,8 @@
         <scene sceneID="bVS-Ve-2A8">
             <objects>
                 <viewController title="Play04" id="5Nj-bT-gH2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="YES" id="GQR-q8-8ja">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <view key="view" contentMode="scaleToFill" id="GQR-q8-8ja">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="429"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Play04" translatesAutoresizingMaskIntoConstraints="NO" id="xBN-9v-i5n">
@@ -1563,7 +1928,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GfA-Sp-YGW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1583,7 +1948,7 @@
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vXt-Ii-BUy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
